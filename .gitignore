@@ -1,0 +1,18 @@
+node_modules/
+.env
+*.log
+memory.json
+memory.json.tmp
+# chat-history snapshot left over from a manual memory repair session
+memory_pre_history_fix.json
+# captcha-solver debug debris (browser.js writes these unconditionally on solve)
+slider_*.png
+# live Qwen JWTs — shielded by the nested repo's own ignore; belt-and-suspenders
+farmer/
+generated/
+# debug dumps (gated behind QWEN_DEBUG env var, never committed)
+payload_dump.json
+opencode-system-prompt.txt
+opencode-tools.json
+completions_response.json
+image_stream_dump.txt

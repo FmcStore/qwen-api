@@ -1,0 +1,21 @@
+{
+  "name": "qwen-proxy",
+  "version": "1.0.0",
+  "description": "OpenAI- and Anthropic-compatible proxy for chat.qwen.ai: chat, tool calling, image and video generation.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "puppeteer": "^25.5.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "undici": "^8.10.0"
+  }
+}
