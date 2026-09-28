@@ -10,6 +10,7 @@ slider_*.png
 # live Qwen JWTs — shielded by the nested repo's own ignore; belt-and-suspenders
 farmer/
 generated/
+data/
 # debug dumps (gated behind QWEN_DEBUG env var, never committed)
 payload_dump.json
 opencode-system-prompt.txt

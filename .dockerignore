@@ -1,0 +1,8 @@
+node_modules
+generated
+data
+farmer/output
+.env
+*.log
+.git
+.DS_Store

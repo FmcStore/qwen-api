@@ -1,0 +1,45 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+startCommand = "/app/docker-entrypoint.sh"
+numReplicas = 1
+healthcheckPath = "/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5
+
+# NOTE: the proxy has no inbound auth of its own and answers with
+# `Access-Control-Allow-Origin: *` while holding live account tokens.
+# Set an upstream/router in front of it (Cloudflare tunnel, nginx, or the
+# 9router instance) before exposing the public domain.
+
+[[deploy.environmentVariables]]
+# comma-separated qwen account tokens, or leave empty and mount a pool file
+variable = "QWEN_TOKENS"
+value = ""
+
+[[deploy.environmentVariables]]
+variable = "QWEN_HOST"
+value = "0.0.0.0"
+
+[[deploy.environmentVariables]]
+variable = "PORT"
+value = "8787"
+
+[[deploy.environmentVariables]]
+variable = "QWEN_CLIENT_VERSION"
+value = "0.2.83"
+
+[[deploy.environmentVariables]]
+variable = "QWEN_WORKERS"
+value = "2"
+
+[[deploy.environmentVariables]]
+variable = "QWEN_THINKING"
+value = "false"
+
+[[deploy.environmentVariables]]
+variable = "QWEN_FORGET_MEMORIES"
+value = "false"
